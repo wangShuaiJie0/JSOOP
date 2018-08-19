@@ -1,32 +1,38 @@
-class Person {
-    constructor(name, age) {
-        this.name = name
-        this.age = age
-    }
-
-    eat() {
-        alert(`${this.name} eat something`)
-    }
-    speak() {
-        alert(`My name is: ${this.name}, age: ${this.age}`)
-    }
-}
-
-class Student extends Person {
-    constructor(name, age, number){
-        super(name, age)
+class Car {
+    constructor(number, name) {
         this.number = number
-    }
-
-    study() {
-        alert(`${this.name} study`)
+        this.name = name
     }
 }
 
-let xiaoming = new Student('xiaoming', 12, '001')
-xiaoming.study()
-xiaoming.speak()
+class Kuaiche extends Car {
+    constructor(number, name) {
+        super(number, name)
+        this.price = 1
+    }
+}
 
-let xiaohong = new Student('xiaohong', 12, '002')
-xiaohong.study()
-xiaohong.speak()
+class Zhuanche extends Car {
+    constructor(number, name) {
+        super(number, name)
+        this.price = 2
+    }
+}
+
+
+class Trip{
+    constructor(car) {
+        this.car = car
+    }
+    start() {
+        console.log(`形成开始，名称:${this.car.name}, 车牌号:${this.car.number}`)
+    }
+    end() {
+        console.log('形成结束，金额:' + this.car.price * 5)
+    }
+}
+
+let car = new Kuaiche(100, '桑塔纳')
+let trip = new Trip(car)
+trip.start()
+trip.end()
