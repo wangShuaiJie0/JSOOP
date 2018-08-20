@@ -4,3 +4,5 @@
 
 
 ### section4 工厂模式
+
+### section4 单例模式
